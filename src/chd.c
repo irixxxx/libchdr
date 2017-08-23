@@ -2153,15 +2153,6 @@ static chd_error hunk_read_into_memory(chd_file *chd, UINT32 hunknum, UINT8 *des
     INTERNAL MAP ACCESS
 ***************************************************************************/
 
-static size_t core_fsize(core_file *f)
-{
-    long rv,p = ftell(f);
-    fseek(f, 0, SEEK_END);
-    rv = ftell(f);
-    fseek(f, p, SEEK_SET);
-    return rv;
-}
-
 /*-------------------------------------------------
     map_read - read the initial sector map
 -------------------------------------------------*/
